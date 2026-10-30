@@ -43,10 +43,6 @@ Proyek ini menganalisis sentimen (positif/negatif) dari ulasan pengguna aplikasi
 | 😠 Negatif | 42.696 |
 | 😊 Positif | 32.732 |
 
-<div align="center">
-  <img src="images/distribusi_sentimen.png" alt="Distribusi sentimen ulasan" width="45%">
-</div>
-
 ## 🔄 Alur Pengerjaan
 
 ```mermaid
@@ -69,12 +65,6 @@ flowchart LR
 | **Tokenizing** | Pecah teks menjadi token kata (NLTK) |
 | **Stopword removal** | Hapus stopword bahasa Indonesia dan Inggris, ditambah kata informal (`gak`, `ga`, `sih`, dll.) |
 
-### Word Cloud
-
-<div align="center">
-  <img src="images/wordcloud.png" alt="Word cloud sentimen positif, negatif, dan umum" width="90%">
-</div>
-
 ## 🏷️ Pelabelan Sentimen
 
 Label ditentukan dengan **lexicon-based sentiment analysis**. Setiap kata dicocokkan dengan kamus kata positif dan negatif yang masing-masing memiliki skor, lalu skor dijumlahkan:
@@ -95,9 +85,7 @@ Fitur teks diekstraksi dengan **TF-IDF** (`max_features=200`, `min_df=17`, `max_
 | **Logistic Regression** | 0,8715 | **0,8686** | 0,003 |
 | Decision Tree | 0,9739 | 0,7921 | 0,182 |
 
-<div align="center">
-  <img src="images/perbandingan_model.png" alt="Perbandingan F1-Score antar model" width="60%">
-</div>
+<img width="1790" height="429" alt="image" src="https://github.com/user-attachments/assets/5d4c070e-59cb-4c6c-8d7c-26eb775e0714" />
 
 **Kesimpulan:** *Logistic Regression* memberi F1-Score test tertinggi (**86,86%**) dengan selisih train–test paling kecil, sehingga paling stabil. Random Forest dan Decision Tree mengalami *overfitting* karena skor training mencapai 97% tetapi turun jauh di data test.
 
